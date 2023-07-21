@@ -12,7 +12,8 @@ const
   statuses = new Map([
     [1, ["playing", chalk.yellowBright.bold]],
     [2, ["listening", chalk.greenBright.bold]],
-    [3, ["streaming", chalk.magentaBright.bold]]
+    [3, ["streaming", chalk.magentaBright.bold]],
+    [4, ["watching", chalk.blueBright.bold]]
   ]);
 
 dotenv.config();

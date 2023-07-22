@@ -1,12 +1,11 @@
 const
   CLIENT_ID = "Add your client id here",
   
-  express = require("express"),
   chalk = require("chalk"),
-  server = express(),
   prompt = require("prompt-sync")({ sigint: true }),
   dotenv = require('dotenv'),
   { Client } = require('discord.js-selfbot-v11'),
+  keep_alive = require('./keep_alive.js'),
   client = new Client(),
 
   statuses = new Map([
@@ -24,9 +23,6 @@ if (!process.env.TOKEN) {
 }
 
 console.log(`${chalk.cyanBright.bold("Statuscord")} | ${chalk.greenBright.bold("SealedSaucer")}`);
-
-server.all("/", (req, res) => res.send(`<meta http-equiv="refresh" content="0; URL=https://phantom.is-a.dev/support"/>`));
-server.listen(process.env.PORT ?? 3000);
 
 client.login(process.env.TOKEN);
 
